@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Researcher Metrics Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- =========================
+             Sidebar
+        ========================== -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <h2>Researcher Metrics</h2>
+                <p>Bibliometric profile explorer</p>
+            </div>
+
+            <nav class="navigation">
+
+                <button
+                    id="welcomeBtn"
+                    class="nav-btn active"
+                >
+                    Welcome
+                </button>
+
+                <button
+                    id="dashboardBtn"
+                    class="nav-btn"
+                >
+                    Dashboard
+                </button>
+
+            </nav>
+
+            <div class="search-area">
+
+                <label for="searchInput">
+                    Search author
+                </label>
+
+                <input
+                    id="searchInput"
+                    type="search"
+                    placeholder="Name, ID or OpenAlex ID"
+                    autocomplete="off"
+                >
+
+            </div>
+
+            <div class="researcher-list">
+
+                <label for="researcherSelect">
+                    Select researcher
+                </label>
+
+                <select id="researcherSelect">
+
+                    <option value="">
+                        No researcher selected
+                    </option>
+
+                </select>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================
+             Main Content
+        ========================== -->
+        <main class="main">
+
+            <header class="topbar">
+
+                <button
+                    id="menuBtn"
+                    class="menu-btn"
+                    aria-label="Open menu"
+                >
+                    ☰
+                </button>
+
+                <div>
+
+                    <h1 id="pageTitle">
+                        Researcher Metrics
+                    </h1>
+
+                    <p id="pageSubtitle">
+                        Bibliometric profile explorer
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <!--
+                JavaScript will render:
+                Welcome page
+                Dashboard
+                Identity
+                Publications
+                OpenAlex
+                Indices
+                Author Roles
+                Classification
+            -->
+            <section
+                id="appContent"
+                class="content"
+            >
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- Notification -->
+    <div
+        id="toast"
+        class="toast"
+    ></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

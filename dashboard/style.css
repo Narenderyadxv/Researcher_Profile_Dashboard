@@ -1,0 +1,795 @@
+/* ============================================================
+   RESEARCHER METRICS DASHBOARD
+   Compact dashboard styling
+   ============================================================ */
+
+:root {
+    --bg: #071112;
+    --surface: #102123;
+    --surface-soft: #142a2c;
+    --text: #f2f6f6;
+    --muted: #9eb5b7;
+    --border: #284447;
+    --primary: #55c9d3;
+    --primary-dark: #2b9da8;
+    --accent: #55c9d3;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+body {
+    font-size: 15px;
+}
+
+
+/* ============================================================
+   APP LAYOUT
+   ============================================================ */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+
+.sidebar {
+    width: 260px;
+    min-width: 260px;
+    background: #061011;
+    border-right: 1px solid var(--border);
+    padding: 26px 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+.brand h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    line-height: 1.15;
+}
+
+.brand p {
+    margin: 8px 0 35px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 38px;
+}
+
+.nav-btn {
+    border: none;
+    background: transparent;
+    color: var(--text);
+    text-align: left;
+    padding: 13px 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background: var(--surface);
+}
+
+.nav-btn.active {
+    background: #263536;
+    color: var(--text);
+}
+
+.search-area,
+.researcher-list {
+    margin-bottom: 26px;
+}
+
+.search-area label,
+.researcher-list label {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.search-area input,
+.researcher-list select {
+    width: 100%;
+    height: 48px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: #101e20;
+    color: var(--text);
+    padding: 0 14px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-area input:focus,
+.researcher-list select:focus {
+    border-color: var(--primary);
+}
+
+
+/* ============================================================
+   MAIN
+   ============================================================ */
+
+.main {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    min-height: 100vh;
+}
+
+.topbar {
+    height: 92px;
+    border-bottom: 1px solid var(--border);
+    padding: 20px 42px;
+    display: flex;
+    align-items: center;
+}
+
+.topbar h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+}
+
+.topbar p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.menu-btn {
+    display: none;
+}
+
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+
+.content {
+    padding: 42px;
+    max-width: 1500px;
+}
+
+
+/* ============================================================
+   WELCOME PAGE
+   ============================================================ */
+
+.welcome-page {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.welcome-card {
+    padding: 10px 0 35px;
+}
+
+.welcome-label {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.welcome-card h2 {
+    max-width: 850px;
+    margin: 15px 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 52px;
+    line-height: 1.05;
+}
+
+.welcome-card p {
+    max-width: 850px;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.primary-btn {
+    margin-top: 14px;
+    border: none;
+    background: var(--primary);
+    color: #062024;
+    padding: 13px 22px;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background: #70d9e1;
+}
+
+.section-title {
+    margin: 15px 0 18px;
+}
+
+.section-title h3 {
+    margin: 0 0 5px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+}
+
+.section-title p {
+    margin: 0;
+    color: var(--muted);
+}
+
+
+/* ============================================================
+   FEATURE CARDS
+   ============================================================ */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.feature-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+    min-height: 125px;
+}
+
+.feature-number {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 13px;
+}
+
+.feature-card h3 {
+    margin: 0 0 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+}
+
+.feature-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+   RESEARCHER PROFILE
+   ============================================================ */
+
+.researcher-profile {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.profile-header h2 {
+    margin: 8px 0 4px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 38px;
+}
+
+.profile-header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 17px;
+}
+
+
+/* ============================================================
+   TOP METRIC CARDS
+   ============================================================ */
+
+.profile-metrics {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.metric-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 18px;
+    min-height: 105px;
+}
+
+.metric-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.metric-card strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+}
+
+.metric-card .metric-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+
+/* ============================================================
+   PROFILE NAVIGATION / MULTI PAGE TABS
+   ============================================================ */
+
+/* ============================================================
+   PROFILE NAVIGATION / MULTI PAGE TABS
+   ============================================================ */
+
+.profile-sections {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 25px;
+    overflow: visible;
+    gap: 0;
+}
+
+.profile-section {
+    position: relative;
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    padding: 0 8px 14px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.profile-section:hover {
+    color: var(--text);
+}
+
+.profile-section.active {
+    color: var(--primary);
+}
+
+.profile-section.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 3px 3px 0 0;
+}
+
+.profile-section span,
+.profile-section small {
+    display: none;
+}
+
+
+/* ============================================================
+   SECTION DETAILS
+   ============================================================ */
+
+.section-details {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.section-details h3 {
+    margin: 0 0 20px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px 35px;
+}
+
+.details-grid > div {
+    background: transparent;
+    padding: 0;
+}
+
+.details-grid span,
+.single-detail span {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.details-grid strong,
+.single-detail strong {
+    color: var(--text);
+    font-size: 16px;
+    word-break: break-word;
+}
+
+.single-detail {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 20px;
+    max-width: 350px;
+}
+
+.section-note {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 18px;
+}
+
+
+/* ============================================================
+   EMPTY / ERROR STATES
+   ============================================================ */
+
+.empty-dashboard {
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.empty-dashboard h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    margin: 0 0 10px;
+}
+
+.empty-dashboard p {
+    color: var(--muted);
+}
+
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+
+.toast {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 12px 18px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    display: none;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+    .profile-metrics {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .details-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+        .profile-sections {
+        grid-template-columns: repeat(3, auto);
+        gap: 20px;
+    }
+
+    .profile-sections {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.profile-section {
+    font-size: 14px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+}
+
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 240px;
+        min-width: 240px;
+    }
+
+    .main {
+        margin-left: 240px;
+        width: calc(100% - 240px);
+    }
+
+    .content {
+        padding: 28px;
+    }
+
+    .profile-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .welcome-card h2 {
+        font-size: 40px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.2s ease;
+        z-index: 100;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .topbar {
+        height: 75px;
+        padding: 15px 20px;
+    }
+
+    .topbar h1 {
+        font-size: 25px;
+    }
+
+    .menu-btn {
+        display: block;
+        margin-right: 15px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text);
+        border-radius: 7px;
+        padding: 7px 10px;
+        cursor: pointer;
+    }
+
+    .content {
+        padding: 22px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-header h2 {
+        font-size: 30px;
+    }
+
+    .welcome-card h2 {
+        font-size: 34px;
+    }
+
+        .profile-sections {
+        grid-template-columns: repeat(2, auto);
+        gap: 18px;
+    }
+
+    .profile-sections {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+}
+
+.profile-section {
+    font-size: 14px;
+    padding-bottom: 11px;
+}
+}
+
+/* ============================================================
+   PUBLICATION LIST
+   ============================================================ */
+
+.publication-list {
+    margin-top: 28px;
+}
+
+.publication-list-title {
+    margin-bottom: 18px;
+}
+
+.publication-list-title h3 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.publication-list-title p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Individual publication */
+
+.publication-card {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    gap: 18px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    padding: 22px;
+    margin-bottom: 14px;
+
+    transition: 0.18s ease;
+}
+
+.publication-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* Publication number */
+
+.publication-number {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: var(--surface-soft);
+    color: var(--primary);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Publication content */
+
+.publication-content h4 {
+    margin: 0 0 10px;
+
+    font-size: 17px;
+    line-height: 1.45;
+
+    color: var(--text);
+}
+
+.publication-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.publication-meta span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.publication-meta strong {
+    color: var(--text);
+    margin-left: 5px;
+}
+
+/* DOI */
+
+.publication-doi {
+    margin-top: 10px;
+
+    font-size: 13px;
+    color: var(--muted);
+
+    word-break: break-word;
+}
+
+.publication-doi a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.publication-doi a:hover {
+    text-decoration: underline;
+}
+
+/* Empty state */
+
+.publication-empty {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    padding: 28px;
+
+    color: var(--muted);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .publication-card {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .publication-number {
+        width: 34px;
+        height: 34px;
+    }
+
+    .publication-content h4 {
+        font-size: 15px;
+    }
+}
