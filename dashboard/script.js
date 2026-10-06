@@ -3,7 +3,7 @@
 // FastAPI + PostgreSQL Connected
 // ============================================================
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "https://researcher-profile-dashboard.onrender.com";
 
 const appContent = document.getElementById("appContent");
 const pageTitle = document.getElementById("pageTitle");
